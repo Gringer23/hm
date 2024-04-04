@@ -1,0 +1,46 @@
+<!-- _footer.html -->
+{% load static %}
+<footer class="footer mt-4 py-3 bg-light">
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-col">
+                <a class="navbar-brand" href="/"><img src="{% static 'media/logo.png' %}" style="width:100%;"></a>
+<!--                <p class="text-muted">&copy; {% now "Y" %}</p>-->
+                <h5>Время работы</h5>
+                <p>Пн-Пт: 9:00 - 18:00</p>
+                <h5>Социальные сети</h5>
+                <ul class="list-unstyled social-list">
+                    <li><a href="https://vk.com/club219423026" target="_blank"><i class="fab fa-vk"></i>VK</a></li>
+                    <li><a href="https://t.me/Holding_KTZ" target="_blank"><i class="fab fa-telegram"></i>Telegram</a></li>
+                    <li><a href="https://ok.ru/group/70000002107187" target="_blank"><i class="fab fa-odnoklassniki"></i>Одноклассники</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Информация</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Каталог</h5>
+                <ul class="list-unstyled">
+                    {% for cat in categories %}
+                        <li><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Контакты</h5>
+                <p class="contact-info">Адрес: 125315, г. Москва, Ленинградский пр., 80к21, подъезд 1 этаж 2</p>
+                <p class="contact-info">Телефон: 8 800 700 50 63</p>
+                <p class="contact-info">Телефон: 8-495-739-94-74</p>
+                <p class="contact-info">E-mail: <a href="mailto:zakaz@ktzholding.ru">zakaz@ktzholding.ru</a></p>
+                <p class="contact-info">Ивантеевка: 8 800 700 50 63</p>
+                <p class="contact-info">Воронеж: 8 (473) 200 04 29</p>
+                <p class="contact-info">Ярославль: 8 (910) 828 04 48</p>
+            </div>
+        </div>
+    </div>
+</footer>

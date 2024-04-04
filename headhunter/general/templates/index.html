@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>РОБОТА</h1>
+
+<div class="category-container">
+    {% if user_group == 'applicant' %}
+    <h2>Доступные вакансии</h2>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li>{{ vacancy.title }}</li>
+            <!-- Вывод остальной информации о вакансии -->
+        {% endfor %}
+    </ul>
+{% elif user_group == 'employer' %}
+    <h2>Доступные позиции</h2>
+    <ul>
+        {% for position in positions %}
+            <li>{{ position.title }}</li>
+            <!-- Вывод остальной информации о позиции -->
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Для доступа к этой странице необходимо <a href="{% url 'accounts:login' %}">войти</a>.</p>
+{% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,351 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% высоты видимой области (viewport) */
+}
+#totalQuantity, #totalPrice {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cart-info {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* добавьте эту строку */
+}
+
+.cart-info p {
+    margin: 0; /* добавьте это, чтобы убрать отступы внутри параграфа */
+}
+
+.cart-info a {
+    display: block; /* добавьте это, чтобы ссылки стали блочными элементами и занимали всю ширину */
+    margin-top: 10px; /* или другое значение отступа между ссылками */
+}
+
+.cart-icon {
+    margin-right: 5px; /* отступ между иконкой и текстом */
+}
+
+.clear-cart {
+    color: #ff0000; /* цвет ссылки очистки корзины */
+}
+tr.cart-item {
+    background-color: #aaffaa !important;
+}
+.container {
+  text-align: center;
+}
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.category-item {
+  width:30%;
+  margin-bottom: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height:220px;
+}
+
+.category-item img {
+  height: 83%;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.category-item p {
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.category-item:hover a {
+  text-decoration: none !important;
+}
+
+
+.category-item:hover p {
+  color: #ff5733;
+  text-decoration: none;
+}
+
+
+/* Добавьте эти стили в ваш файл product.css или в тот файл, где у вас уже есть стили */
+.navbar {
+    background-color: #252C44!important; /* Цвет фона навбара */
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1); /* Тень навбара */
+}
+
+.navbar-brand {
+    color: #000000; /* Цвет текста бренда в навбаре */
+}
+
+.navbar-toggler-icon {
+    background-color: #000000; /* Цвет иконки бургера */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #000000; /* Цвет текста ссылок */
+    text-decoration: none !important; /* Убираем подчеркивание ссылок */
+    transition: color 0.3s ease-in-out; /* Плавное изменение цвета при наведении */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ff5733; /* Цвет текста при наведении */
+}
+
+.navbar-toggler {
+    border: 1px solid #000000; /* Цвет обводки бургера */
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 10px; /* Добавим немного отступов, чтобы сделать навбар компактнее на мобильных устройствах */
+    }
+}
+
+ul > li {
+  list-style: none;
+}
+
+/* Добавьте следующие стили в ваш файл CSS */
+.footer {
+    padding-top: 90px;
+    padding-bottom: 80px;
+    border-top: 8px #227AFF solid;
+    background: linear-gradient(164.11deg, #4D5A7F 0%, #364162 99.28%);
+}
+
+.footer h5 {
+    color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+
+.footer p,
+.footer a {
+    color: #9AA6C8;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .container {
+    max-width: 1400px;
+}
+.footer-col {
+    line-height: 1.5; /* Уменьшаем расстояние между строками */
+}
+
+.footer-col h5,
+.footer-col p {
+    margin: 0; /* Обнуляем внешние отступы */
+}
+
+.footer-col .contact-info {
+    margin-bottom: 5px; /* Добавляем небольшой отступ между строками контактной информации */
+}
+.footer .footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-col {
+    flex: 1; /* Растягиваем по ширине своего контента */
+    max-width: 300px; /* Устанавливаем максимальную ширину, чтобы не растягивалось бесконечно */
+    margin-right: 20px; /* Добавляем небольшой отступ между блоками */
+}
+
+/* Очищаем отступы для последнего элемента в строке */
+.footer-col:last-child {
+    margin-right: 0;
+}
+
+.footer .title_footer {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer .footer_list {
+    padding: 0;
+    list-style: none;
+}
+
+.footer .footer_list li {
+    margin-bottom: 10px;
+}
+
+.footer .contacts_footer {
+    margin-top: 20px;
+}
+
+.footer .social_list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.footer .social_list li {
+    margin-right: 10px;
+}
+
+.footer .copyright {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer .copyright img {
+    margin-left: 10px;
+}
+
+#productTable > thead > tr > th {
+    text-align:center
+}
+.cart-info {
+    cursor: grab; /* Стандартный курсор */
+}
+
+.cart-info:active {
+    cursor: grabbing; /* Курсор при перемещении */
+}
+
+/* Добавляем новые стили для модального окна
+#calculatorModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #fefefe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #888;
+    border-radius: 8px;
+}
+
+/* Переиспользуем стили для закрытия модального окна
+#calculatorModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#calculatorModal .close:hover,
+#calculatorModal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Переиспользуем стили для содержимого модального окна
+#calculatorModal .modal-content {
+    /* Добавьте стили, если необходимо, например, отступы
+}
+
+/* Остальные стили для подложки (background overlay)
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+*/
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group > input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.g-recaptcha {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+#form_buying_product > input{
+  width: 100px;
+}
+#form_buying_product_weight > input{
+  width: 100px;
+}
+input[readonly] {
+    background-color: #ddd;
+    color: black;
+}
+
+/* styles.css */
+
+.product-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-details {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.product-details p {
+  margin: 10px 0;
+}
+
+.product-details p strong {
+  font-weight: bold;
+}
