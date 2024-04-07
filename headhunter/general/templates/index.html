@@ -1,28 +1,50 @@
 {% extends "base.html" %}
 
-{% block content %}
-<h1>РОБОТА</h1>
+{% block styles %}
+{% endblock %}
 
-<div class="category-container">
+{% block content %}
+<div class="content">
     {% if user_group == 'applicant' %}
     <h2>Доступные вакансии</h2>
-    <ul>
+    <div class="container">
         {% for vacancy in vacancies %}
-            <li>{{ vacancy.title }}</li>
-            <!-- Вывод остальной информации о вакансии -->
+        <div class="card">
+            <div>
+                <h5>{{ vacancy.title }}</h5>
+                <p>{{ vacancy.description}}</p>
+            </div>
+            <div>
+                {% if vacancy.id in response_dict %}
+                <a href="{% url 'jobreject' vacancy.id %}">Отменить отклик</a>
+                {% else %}
+                <a href="{% url 'jobconnect' vacancy.id %}">Откликнуться</a>
+                {% endif %}
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-{% elif user_group == 'employer' %}
-    <h2>Доступные позиции</h2>
-    <ul>
+    </div>
+        {% elif user_group == 'employer' %}
+        <h2>Доступные резюме</h2>
+    <div class="container">
         {% for position in positions %}
-            <li>{{ position.title }}</li>
-            <!-- Вывод остальной информации о позиции -->
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>Для доступа к этой странице необходимо <a href="{% url 'accounts:login' %}">войти</a>.</p>
-{% endif %}
+        <div class="card">
+            <p>{{ position.title }} - {{ position.user.first_name }} {{ position.user.last_name }}</p>
+            <div>
+                {% if position.id in response_dict %}
+                <a href="{% url 'reject' position.id %}">Отклонить приглашение</a>
+                {% else %}
+                <a href="{% url 'invite' position.id %}">Пригласить</a>
+                {% endif %}
 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+        {% else %}
+        <p class="login">Чтобы найти работу необходимо войти <a href="{% url 'accounts:login' %}">войти</a>.</p>
+        {% endif %}
+    </div>
 </div>
+
 {% endblock %}
